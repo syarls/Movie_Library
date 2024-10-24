@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Android Studio Exercises</string>
+    <string name="no_rating_available">No Rating Available</string>
+    <string name="not_specified">Not Specified</string>
+    <string name="average_runtime_visible">Average Runtime: %1$s minutes</string>
+    <string name="average_runtime_not_visible">Average Runtime: Not Specified</string>
+    <string name="rating">Rating: %1$s</string>
+    <string name="discover_more">"Discover More! "</string>
+    <string name="website">"Website: "</string>
+    <string name="link">"Link: "</string>
+    <string name="gallery">"Gallery "</string>
+    <string name="no_images_found">No Images Found</string>
+    <string name="gallery_image">Gallery Image</string>
+    <string name="overview">"Overview: "</string>
+    <string name="show_details">"Show Details: "</string>
+    <string name="language">Language: </string>
+    <string name="genres">Genres: </string>
+    <string name="tvmaze">https://www.tvmaze.com</string>
+    <string name="search_for_tv_shows">Search for TV Shows...</string>
+    <string name="no_results_found">No results found</string>
+    <string name="website_view">Website View</string>
+    <string name="unknown_show">Unknown Show</string>
 </resources>
