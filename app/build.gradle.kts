@@ -1,22 +1,20 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.10"
-    id("com.google.devtools.ksp") version "1.9.20-1.0.14"
-    id ("kotlin-parcelize")
-    kotlin("kapt")
-
+    alias(libs.plugins.kotlin.android) version "1.9.24"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.24"
+    id("com.google.devtools.ksp") version "1.9.24-1.0.20"
+    id("kotlin-parcelize")
 }
-
-
 android {
     namespace = "com.example.androidstudioexercises"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.androidstudioexercises"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -39,15 +37,17 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+    kotlin {
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_1_8
+        }
     }
     buildFeatures {
         compose = true
         viewBinding = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.14"
     }
     packaging {
         resources {
@@ -88,13 +88,14 @@ dependencies {
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
     implementation (libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation ("com.google.android.material:material:1.12.0")
-    kapt ("com.squareup.moshi:moshi-kotlin-codegen:1.15.0")
-    implementation ("org.jetbrains.kotlin:kotlin-stdlib:1.8.0")
-    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.3")
-    implementation("com.squareup.okhttp3:okhttp:4.9.3")
-    implementation("io.insert-koin:koin-android:3.2.0-beta-1")
-    implementation("io.insert-koin:koin-androidx-navigation:3.2.0-beta-1")
-    implementation("io.insert-koin:koin-androidx-compose:3.2.0-beta-1")
+    implementation("androidx.compose.material:material-icons-extended:1.5.0")
+    implementation ("com.google.android.material:material:1.13.0")
+    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.2")
+    implementation ("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation("io.insert-koin:koin-android:3.4.3")
+    implementation("io.insert-koin:koin-androidx-navigation:3.4.3")
+    implementation("io.insert-koin:koin-androidx-compose:3.4.3")
 
 }
